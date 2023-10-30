@@ -10,7 +10,7 @@ This is a package for making an animation of a lattice configuration.
 
 Plaquette for each site $(x,y)$ is plotted and interpolated by B-spline for presentation.
 
-$\mu$-$\nu$ and $z$ axis are averaged.
+$\mu$ - $\nu$ and $z$ axis are averaged.
 
 The $t$ direction is imaginary-time but treated as a real-time.
 
