@@ -4,6 +4,8 @@
 
 This is a package for making an animation of a lattice configuration.
 
+<img src="latticeQCD_animation.gif" width=500>
+
 - Input format: ILDG, JLD2 (small modification is needed. See [here](https://github.com/akio-tomiya/Gaugefields.jl) )
 
 - Output: GIF.
