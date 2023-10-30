@@ -25,6 +25,22 @@ function ln_a(beta::Float64)::Float64
     return -1.6805 - 1.7139*delta_beta + 0.8155*delta_beta^2 - 0.6667*delta_beta^3
 end
 
+function create_animation(U1, scale_factor,Nstout::Int,ρ=0.03)# stout (3 level)
+    NT, NX, NY, NZ, _ = size(U1[1])[6], size(U1[1])[3], size(U1[1])[4], size(U1[1])[5], size(U1[1])[1]
+    Lat = [NX,NY,NZ,NT]
+    nn = CovNeuralnet()
+    
+    ρs = [ρ]
+    layername = ["plaquette"]
+    st = STOUT_Layer(layername,ρs,Lat)
+    for _ in 1:Nstout
+        push!(nn,st)
+    end
+
+    Uout, _, _ = calc_smearedU(U1,nn)
+    create_animation(Uout, scale_factor)
+end
+
 # Subroutine to calculate 'a' from beta
 function calculate_a(beta::Float64)::Float64
     return r_0 * exp(ln_a(beta))
@@ -77,6 +93,9 @@ function main()
     load_gaugefield!(U1, 1, ildg, [NX, NY, NZ, NT], NC)
 
     create_animation(U1, scale_factor)
+    # If you want to plot stout smeared, you can use following
+    # Nstout = 3
+    # create_animation(U1, scale_factor, Nstout)
 end
 
 main()
