@@ -31,7 +31,7 @@ function calculate_a(beta::Float64)::Float64
 end
 
 function create_animation(U1, scale_factor)
-    NT, NX, NY, NZ, NC = size(U1[1])[6], size(U1[1])[3], size(U1[1])[4], size(U1[1])[5], size(U1[1])[1]
+    NX, NY, NZ, NT, NC = size(U1[1])[6], size(U1[1])[3], size(U1[1])[4], size(U1[1])[5], size(U1[1])[1]
     min_value, max_value = 0.0, 1.0
     loop = [(1, +1), (2, +1), (1, -1), (2, -1)]
     
