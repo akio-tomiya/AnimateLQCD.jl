@@ -2,7 +2,7 @@
 
 2023/10/30 akio@yukawa.kyoto-u.ac.jp A. Tomiya
 
-This is a package for making an animation of a lattice configuration.
+This is a package for making an animation of a lattice configuration using [Gaugefields.jl](https://github.com/akio-tomiya/Gaugefields.jl)
 
 <img src="latticeQCD_animation.gif" width=500>
 
