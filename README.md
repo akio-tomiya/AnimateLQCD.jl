@@ -4,7 +4,7 @@
 
 This is a package for making an animation of a lattice configuration.
 
-- Input format: ILDG, JLD2, etc.
+- Input format: ILDG, JLD2 (small modification is needed. See [here](https://github.com/akio-tomiya/Gaugefields.jl) )
 
 - Output: GIF.
 
